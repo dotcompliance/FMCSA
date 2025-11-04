@@ -1,0 +1,11 @@
+# robots.txt for DOT Compliance Demo
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /thank-you.html
+Disallow: /seo-checklist.html
+
+# Sitemap
+Sitemap: https://demo.example.com/sitemap.xml

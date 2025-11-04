@@ -1,0 +1,56 @@
+OBJETIVO:
+Generar un sitio estático y optimizado SEO técnico (HTML5 + CSS + JS mínimo) llamado "DOT Compliance Demo". El sitio servirá como plantilla para sustituir contenido real posteriormente. Debe incluir todas las mejoras prioritarias descritas en el brief.
+
+REQUIREMENTS (entregables):
+- index.html (home)
+- services/ (carpeta) con al menos 5 páginas: new-usdot.html, boc-3.html, clearinghouse.html, hazmat.html, trainings.html
+- blog/ con 3 posts de ejemplo (blog-post-1.html ...)
+- sitemap.xml (automáticamente generado en /sitemap.xml)
+- robots.txt (bloquea admin paths, permite sitemap)
+- assets/: CSS (style.css), JS (main.js), images optimizadas (webp/png)
+- manifest.json (PWA basic)
+- /schema.jsonld inlined in each page (Organization, Service, BreadcrumbList, FAQ)
+- canonical link tag en cada página
+- meta title y meta description único por página
+- Open Graph (og:) and Twitter Card tags
+- Responsive design (mobile-first)
+- Accessibility basics (alt for images, semantic HTML, ARIA where needed)
+- Performance: images in WebP, preconnect to fonts/CDN, defer non-critical JS, critical CSS inline, lazy loading images
+- Implement structured data examples: Organization, LocalBusiness, Service, BreadcrumbList and FAQPage (json-ld)
+- Implement a minimal contact form (no real backend) that posts to a dummy /thank-you.html page; include noscript fallback
+- Include sample GTM container snippet (placeholder) and Bing UET / GA4 placeholders with instructions in README how to replace
+- Create a /README.md with:
+    - Steps to test PageSpeed, WebPageTest and how to interpret LCP/CLS/TTI
+    - How to add site to Bing Webmaster Tools and submit sitemap
+    - How to configure SPF/DKIM/DMARC for emails and link to resources
+    - How to run local dev server and build
+- Include meta tags for robots (index, follow) and an example of a page with noindex (e.g., /thank-you.html noindex)
+- Create a "SEO checklist" page (seo-checklist.html) visible only to admins (noindex) listing the Top 10 fixes implemented and how to verify them
+
+DETAILED SEO & TECHNICAL SPECIFICATIONS:
+1) meta titles: <= 60 chars, include main keyword. Add meta descriptions 120–155 chars.
+2) canonical tag: <link rel="canonical" href="https://demo.example.com/path">
+3) JSON-LD: Organization with name, logo, url, contactPoint, sameAs (social links) + LocalBusiness details (address). Every service page must include Service structured data with serviceType and description.
+4) FAQ schema: at least 3 Q&A items in each service page.
+5) BreadcrumbList schema for each nested page.
+6) Sitemap: include lastmod dates; formatted according to protocol.
+7) robots.txt: allow all except /admin/ and /private/ ; include "Sitemap: https://demo.example.com/sitemap.xml"
+8) Accessibility: pass Lighthouse accessibility score > 90 (baseline)
+9) Performance optimizations: critical CSS inline; CSS file minified; defer scripts; use lazy loading for below-the-fold images; compress images to webp; include width/height attributes for images to prevent CLS.
+10) Linking & anchors: use descriptive anchor text, avoid generic "click here".
+11) Analytics: include GA4 and Bing UET placeholders with a short comment describing where to paste tracking IDs.
+12) Server headers (document in README): suggest caching headers and how to configure via Replit / Netlify / Vercel.
+13) SEO content: each service page should have 600–900 words unique content, H1 + H2s and an FAQ section.
+14) Provide a sample "301 redirect" rule file (redirects.txt or _redirects) showing how to redirect old expired domains to the new site safely.
+15) Provide a script (node or bash) that generates sitemap.xml automatically scanning the folder structure.
+
+DELIVER AS:
+- A Replit project folder with all files
+- README with deployment & verification steps
+- A short shell command to run a local server (e.g., "npx serve" instructions)
+
+NOTES:
+- Do not include real API keys or private info — placeholders only.
+- Keep design clean, corporate (blue/gray) and accessible.
+- Optimize for Bing: include clear service intent, FAQ, schema, and content semantically focused on the keywords: "FMCSA compliance", "USDOT registration", "BOC-3 filing", "DOT permits", "Drug & Alcohol Clearinghouse".
+

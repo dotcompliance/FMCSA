@@ -1,0 +1,21 @@
+# 301 Redirects Configuration
+# This file shows example redirect rules for expired domains or URL changes
+# 
+# Format: old-path    new-path    301
+# 
+# Examples:
+
+# Redirect old expired domain to new site
+# https://oldcompliancesite.com/*  https://demo.example.com/:splat  301
+
+# Redirect old service pages to new structure
+/old-services/dot-number  /services/new-usdot.html  301
+/old-services/boc3  /services/boc-3.html  301
+/register  /services/new-usdot.html  301
+/contact-us  /#contact  301
+
+# Redirect HTTP to HTTPS (if not handled by server)
+# http://demo.example.com/*  https://demo.example.com/:splat  301
+
+# Redirect www to non-www (or vice versa, choose one)
+# https://www.demo.example.com/*  https://demo.example.com/:splat  301
